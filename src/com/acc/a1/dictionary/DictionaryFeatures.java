@@ -62,7 +62,9 @@ public class DictionaryFeatures {
 		dictionaryItems.put("READ", "Look at and comprehend the meaning of by mentally interpreting the characters or symbols of which it is composed");
 		dictionaryItems.put("SHOUT", "Utter a loud call or cry, typically as an expression of a strong emotion");
 		dictionaryItems.put("SLEEP", "A condition of body and mind that typically recurs for several hours every night, in which the eyes are closed, the postural muscles relaxed, the activity of the brain altered, and consciousness of the surroundings practically suspended");
-		dictionaryItems.put("COMPU", "sample");
+		dictionaryItems.put("COMPLIMENT", "A polite expression of praise or admiration");
+		dictionaryItems.put("COMPASSION", "A sympathetic pity and concern for the sufferings or misfortunes of others");
+		dictionaryItems.put("HARDWORK", "A great deal of effort or endurance");
 	}
 
 }
