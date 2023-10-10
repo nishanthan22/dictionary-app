@@ -1,15 +1,12 @@
-/**
- * 
- */
+
 package com.acc.a1.dictionary;
 
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Set;
 
 /**
- * 
+ * This class consists of all the method definitions of the functions that can be done with this Dictionary Application
  */
 public class DictionaryFeatures {
 	private static HashMap<String, String> dictionaryItems = new HashMap<>();
@@ -28,26 +25,21 @@ public class DictionaryFeatures {
 	}
 
 	public static void suggestTheWordFromDictionary(String lookupWord) {
-	
-		Set <String> keysList = new HashSet<>();
-		Set <String> suggestions = new HashSet<>();
-		keysList = dictionaryItems.keySet();
+		Set<String> suggestions = new HashSet<>();
 		
-		for(String s: keysList) {
-			if(s.startsWith(lookupWord))
-				suggestions.add(s);
-		}
-		
+		for (String arbitraryStr : dictionaryItems.keySet())
+			if (arbitraryStr.startsWith(lookupWord))
+				suggestions.add(arbitraryStr);
+
 		if (!suggestions.isEmpty())
-			System.out.println("Suggested words: "+ suggestions.toString().replace("[", "").replace("]", ""));
+			System.out.println("Suggested words: " + suggestions.toString().replace("[", "").replace("]", ""));
 		else
 			System.out.println("No words found in the dictionary matching the letters you have entered");
-		
 	}
 
-	public static void addNewEntryInDictionary() {
-		// TODO Auto-generated method stub
-		
+	public static void addNewEntryInDictionary(String newWord, String definition) {
+		dictionaryItems.put(newWord, definition);
+		System.out.println("New word added in the dictionary!!!\n"+newWord + ": " + dictionaryItems.get(newWord));
 	}
 	
 	public static void initializeDefaultItems() {
