@@ -22,19 +22,19 @@ public class Dictionary {
 			System.out.println("Welcome to the Dictionary !!!");
 			System.out.println("1. LookUp/Search a word\n2. Not sure of the word, want us to suggest?\n3. Add new entry/word in the dictionary\n4. Exit\nSelect what you want to perform: ");
 			
-			int choice = input.nextInt();
+			int choice = Integer.parseInt(input.nextLine());
 			String word = "";
 			switch(choice) {
 				
 				case 1:
 					System.out.print("Enter the word:");
 					word = input.nextLine();
-					DictionaryFeatures.lookupTheWordInDictionary(word);
+					DictionaryFeatures.lookupTheWordInDictionary(word.toUpperCase());
 					break;
 				case 2:
 					System.out.print("Enter the partial word you know:");
 					word = input.nextLine();
-					DictionaryFeatures.suggestTheWordFromDictionary(word);
+					DictionaryFeatures.suggestTheWordFromDictionary(word.toUpperCase());
 					break;
 				case 3:
 					DictionaryFeatures.addNewEntryInDictionary();

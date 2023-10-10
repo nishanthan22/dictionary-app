@@ -3,6 +3,7 @@
  */
 package com.acc.a1.dictionary;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Set;
@@ -16,8 +17,8 @@ public class DictionaryFeatures {
 	public static void lookupTheWordInDictionary(String lookupWord) {
 		
 		try {
-			if (dictionaryItems.containsKey(lookupWord.toUpperCase())) {
-				System.out.println("Definition: " + dictionaryItems.get(lookupWord.toUpperCase()));
+			if (dictionaryItems.containsKey(lookupWord)) {
+				System.out.println("Definition: " + dictionaryItems.get(lookupWord));
 			} else
 				System.out.println("The entered word is not found in the dictionary");
 		} catch (Exception exc) {
@@ -36,6 +37,11 @@ public class DictionaryFeatures {
 			if(s.startsWith(lookupWord))
 				suggestions.add(s);
 		}
+		
+		if (!suggestions.isEmpty())
+			System.out.println("Suggested words: "+ suggestions.toString().replace("[", "").replace("]", ""));
+		else
+			System.out.println("No words found in the dictionary matching the letters you have entered");
 		
 	}
 
@@ -56,7 +62,7 @@ public class DictionaryFeatures {
 		dictionaryItems.put("READ", "Look at and comprehend the meaning of by mentally interpreting the characters or symbols of which it is composed");
 		dictionaryItems.put("SHOUT", "Utter a loud call or cry, typically as an expression of a strong emotion");
 		dictionaryItems.put("SLEEP", "A condition of body and mind that typically recurs for several hours every night, in which the eyes are closed, the postural muscles relaxed, the activity of the brain altered, and consciousness of the surroundings practically suspended");
-		
+		dictionaryItems.put("COMPU", "sample");
 	}
 
 }
